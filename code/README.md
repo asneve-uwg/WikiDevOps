@@ -1,3 +1,0 @@
-# DevOpsJavafx
-DevOpsJavafx
-wiki article
