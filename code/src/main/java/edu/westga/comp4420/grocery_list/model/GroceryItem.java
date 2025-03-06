@@ -13,7 +13,7 @@ public final class GroceryItem {
 	private final int amountNeeded;
 	
 	/**
-	 * Create and initialize a new grocery item with the provided information.test
+	 * Create and initialize a new grocery item with the provided information.
 	 * 
 	 * @precondition name != null &&
 	 *				 !name.isEmpty() &&
