@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-
 import edu.westga.comp4420.grocery_list.Main;
 
 public class LoginController {
