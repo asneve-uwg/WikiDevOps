@@ -10,9 +10,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 import edu.westga.comp4420.grocery_list.Main;
 
+/**
+ * Controller class for handling login actions.
+ *
+ * @author Devops 2025 Sneve
+ */
 public class LoginController {
     @FXML
     private TextField usernameField;
@@ -21,26 +25,31 @@ public class LoginController {
     @FXML
     private Button loginButton;
 
+    /**
+     * Handles the login button action.
+     * 
+     * @throws IOException if an I/O error occurs
+     */
     @FXML
     private void handleLoginButtonAction() throws IOException {
         String username = this.usernameField.getText();
         String password = this.passwordField.getText();
 
         if (username.equals("u") && password.equals("p")) {
-			try {
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(Main.class.getResource(Main.MAIN_WINDOW_RESOURCE));
-				loader.load();
-				Parent parent = loader.getRoot();
-				Scene scene = new Scene(parent);
-				Stage addItemStage = new Stage();
-				addItemStage.setTitle(Main.WINDOW_TITLE);
-				addItemStage.setScene(scene);
-				MainController controller = (MainController) loader.getController();
-				addItemStage.showAndWait();
-			} catch (IOException error) {
-				System.out.println("Invalid credentials");
-			}
-		}
-	}
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(Main.class.getResource(Main.MAIN_WINDOW_RESOURCE));
+                loader.load();
+                Parent parent = loader.getRoot();
+                Scene scene = new Scene(parent);
+                Stage addItemStage = new Stage();
+                addItemStage.setTitle(Main.WINDOW_TITLE);
+                addItemStage.setScene(scene);
+                MainController controller = (MainController) loader.getController();
+                addItemStage.showAndWait();
+            } catch (IOException error) {
+                System.out.println("Invalid credentials");
+            }
+        }
+    }
 }
