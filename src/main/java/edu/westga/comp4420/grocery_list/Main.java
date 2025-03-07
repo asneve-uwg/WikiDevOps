@@ -32,13 +32,6 @@ public class Main extends Application {
 		primaryStage.show();
     }
 
-    public static void showMainPage() throws IOException {
-		Parent parent = FXMLLoader.load(Main.class.getClass().getResource("view/codebehind/main.fxml"));
-		Scene scene = new Scene(parent);
-		primaryStage.setTitle("JavaFX Sample");
-		primaryStage.setScene(scene);
-		primaryStage.show();
-    }
 
     public static void main(String[] args) {
         launch(args);
