@@ -1,52 +1,46 @@
 package edu.westga.comp4420.grocery_list;
 
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-/**
- * Entry point for the program
- *
- * @author	Comp 4420
- * @version Spring 2025
- */
+import java.io.IOException;
+
+
+
 public class Main extends Application {
+    private static Stage primaryStage;
+	public static final String LOGIN_WINDOW_RESOURCE = "view/codebehind/login.fxml";
+	public static final String MAIN_WINDOW_RESOURCE = "view/codebehind/main.fxml";
 	public static final String WINDOW_TITLE = "JavaFX Sample";
-	public static final String MAIN_WINDOW_RESOURCE = "view/codebehind/MainWindow.fxml";
-	public static final String ADD_ITEM_WINDOW_RESOURCE = "view/codebehind/AddItemWindow.fxml";
-	public static final String UPDATE_ITEM_WINDOW_RESOURCE = "view/codebehind/UpdateItemWindow.fxml";
 
-	/**
-	 * JavaFX entry point.
-	 *
-	 * @precondition none
-	 * @postcondition none
-	 *
-	 * @throws IOException
-	 */
-	@Override
-	public void start(Stage primaryStage) throws IOException {
-		Parent parent = FXMLLoader.load(getClass().getResource(Main.MAIN_WINDOW_RESOURCE));
+
+
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        Main.primaryStage = primaryStage;
+        showLoginPage();
+    }
+
+    static void showLoginPage() throws IOException {
+		Parent parent = FXMLLoader.load(Main.class.getResource("view/codebehind/login.fxml"));
 		Scene scene = new Scene(parent);
-		primaryStage.setTitle(WINDOW_TITLE);
+		primaryStage.setTitle("JavaFX Sample");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-	}
+    }
 
-	/**
-	 * Primary Java entry point.
-	 *
-	 * @precondition none
-	 * @postcondition none
-	 *
-	 * @param args
-	 *            command line arguments
-	 */
-	public static void main(String[] args) {
-		Main.launch(args);
-	}
+    public static void showMainPage() throws IOException {
+		Parent parent = FXMLLoader.load(Main.class.getClass().getResource("view/codebehind/main.fxml"));
+		Scene scene = new Scene(parent);
+		primaryStage.setTitle("JavaFX Sample");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
