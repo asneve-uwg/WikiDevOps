@@ -132,7 +132,6 @@
 									<element>PACKAGE</element>
 									<excludes>
 										<exclude>edu.westga.comp4420.grocery_list.view.codebehind</exclude>
-										<exclude>edu.westga.comp4420.grocery_list</exclude>
 									</excludes>
 									<limits>
 										<limit>
