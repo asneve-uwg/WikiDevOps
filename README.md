@@ -1,14 +1,12 @@
 # DevOpsJavafx
 DevOpsJavafx
-wiki article test test test
+wiki article sign in and create an account 
 
-deployment process for your Node.js website using Azure WebApp:
+##  Using local host deployment
+click on the setup.sh file in the WikiDevOps directory
 
----
+# Deployment process for your Node.js website using Azure WebApp:
 
-##  Deployment Instructions
-
-This section outlines the steps taken to deploy the Node.js application to Microsoft Azure using the Azure WebApp service.
 
 ### 1. Prepare Node.js App for Deployment
 
