@@ -1,52 +1,56 @@
 package edu.westga.comp4420.grocery_list;
 
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 /**
- * Entry point for the program
+ * Main class for the JavaFX application.
  *
- * @author	Comp 4420
- * @version Spring 2025
+ * @author Devops 2025 Sneve
  */
 public class Main extends Application {
-	public static final String WINDOW_TITLE = "JavaFX Sample";
-	public static final String MAIN_WINDOW_RESOURCE = "view/codebehind/MainWindow.fxml";
-	public static final String ADD_ITEM_WINDOW_RESOURCE = "view/codebehind/AddItemWindow.fxml";
-	public static final String UPDATE_ITEM_WINDOW_RESOURCE = "view/codebehind/UpdateItemWindow.fxml";
+    private static Stage primaryStage;
+    public static final String LOGIN_WINDOW_RESOURCE = "view/codebehind/login.fxml";
+    public static final String MAIN_WINDOW_RESOURCE = "view/codebehind/main.fxml";
+    public static final String CREATE_ACCOUNT_WINDOW_RESOURCE = "view/codebehind/createUser.fxml";
+    public static final String WINDOW_TITLE = "JavaFX Sample";
 
-	/**
-	 * JavaFX entry point.
-	 *
-	 * @precondition none
-	 * @postcondition none
-	 *
-	 * @throws IOException
-	 */
-	@Override
-	public void start(Stage primaryStage) throws IOException {
-		Parent parent = FXMLLoader.load(getClass().getResource(Main.MAIN_WINDOW_RESOURCE));
-		Scene scene = new Scene(parent);
-		primaryStage.setTitle(WINDOW_TITLE);
-		primaryStage.setScene(scene);
-		primaryStage.show();
-	}
+    /**
+     * Starts the JavaFX application.
+     *
+     * @param primaryStage the primary stage for this application
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        Main.primaryStage = primaryStage;
+        showLoginPage();
+    }
 
-	/**
-	 * Primary Java entry point.
-	 *
-	 * @precondition none
-	 * @postcondition none
-	 *
-	 * @param args
-	 *            command line arguments
-	 */
-	public static void main(String[] args) {
-		Main.launch(args);
-	}
+    /**
+     * Shows the login page.
+     *
+     * @throws IOException if an I/O error occurs
+     */
+    static void showLoginPage() throws IOException {
+        Parent parent = FXMLLoader.load(Main.class.getResource(LOGIN_WINDOW_RESOURCE));
+        Scene scene = new Scene(parent);
+        primaryStage.setTitle(WINDOW_TITLE);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    /**
+     * The main method to launch the JavaFX application.
+     *
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+
+    }
 }
